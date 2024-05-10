@@ -71,11 +71,11 @@ struct MainView: View {
           .tabItem { Label("Conversation", systemImage: "eyeglasses") }
         
         Text("Community")
-          .tabItem { Label("Community", systemImage: "eyeglasses") }
+          .tabItem { Label("Community", systemImage: "message") }
         Text("Network")
-          .tabItem { Label("Network", systemImage: "eyeglasses") }
+          .tabItem { Label("Network", systemImage: "person.badge.plus") }
         Text("Jobs")
-          .tabItem { Label("Jobs", systemImage: "eyeglasses") }
+          .tabItem { Label("Jobs", systemImage: "suitcase") }
       }
       .navigationTitle("Conversations")
       .sheet(item: $store.scope(
