@@ -10,6 +10,11 @@ struct ConversationReducer {
     let chatModel = Model.gpt3_5Turbo
     var conversation: Conversation
     var inputText = String()
+    
+    init() {
+      @Dependency(\.uuid) var uuid
+      self.conversation = Conversation(id: uuid().uuidString, messages: [])
+    }
   }
   enum Action: ViewAction {
     case view(View)
@@ -222,5 +227,13 @@ struct ChatBubble3: View {
       }
     }
   }
+}
+
+// MARK: - SwiftUI Previews
+
+#Preview {
+  ConversationView(store: Store(initialState: ConversationReducer.State()) {
+    ConversationReducer()
+  })
 }
 

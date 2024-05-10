@@ -6,14 +6,16 @@ import OpenAI
 struct MainReducer {
   @ObservableState
   struct State: Equatable {
-    var conversations = IdentifiedArrayOf<ConversationReducer.State>()
+    var conversation = ConversationReducer.State()
+    @Presents var destination: Destination.State?
   }
   enum Action: ViewAction {
     case view(View)
-    case conversations(IdentifiedActionOf<ConversationReducer>)
+    case destination(PresentationAction<Destination.Action>)
+    case conversation(ConversationReducer.Action)
 
     enum View: BindableAction {
-      case newConversationButtonTapped
+      case navigateToAccount
       case binding(BindingAction<State>)
     }
   }
@@ -21,6 +23,9 @@ struct MainReducer {
   @Dependency(\.uuid) var uuid
   
   var body: some ReducerOf<Self> {
+    Scope(state: \.conversation, action: \.conversation) {
+      ConversationReducer()
+    }
     BindingReducer(action: \.view)
     Reduce { state, action in
       switch action {
@@ -28,13 +33,8 @@ struct MainReducer {
       case let .view(action):
         switch action {
           
-        case .newConversationButtonTapped:
-          state.conversations.append(ConversationReducer.State(
-            conversation: Conversation(
-              id: self.uuid().uuidString,
-              messages: []
-            ))
-          )
+        case .navigateToAccount:
+          state.destination = .account(.init())
           return .none
           
         case .binding:
@@ -42,13 +42,19 @@ struct MainReducer {
           
         }
         
-      case .conversations:
+      case .conversation:
+        return .none
+        
+      case .destination:
         return .none
       }
     }
-    .forEach(\.conversations, action: \.conversations) {
-      ConversationReducer()
-    }
+    .ifLet(\.$destination, action: \.destination)
+  }
+  
+  @Reducer(state: .equatable)
+  enum Destination {
+    case account(Account)
   }
 }
 
@@ -60,22 +66,40 @@ struct MainView: View {
   
   var body: some View {
     NavigationStack {
-      List {
-        ForEach(store.scope(state: \.conversations, action: \.conversations)) { childStore in
-          NavigationLink("Untitled") {//(childStore.conversation.value.messages.last?.content ?? "New Conversation") {
-            ConversationView(store: childStore)
-          }
-        }
+      TabView {
+        ConversationView(store: store.scope(state: \.conversation, action: \.conversation))
+          .tabItem { Label("Conversation", systemImage: "eyeglasses") }
+        
+        Text("Community")
+          .tabItem { Label("Community", systemImage: "eyeglasses") }
+        Text("Network")
+          .tabItem { Label("Network", systemImage: "eyeglasses") }
+        Text("Jobs")
+          .tabItem { Label("Jobs", systemImage: "eyeglasses") }
       }
       .navigationTitle("Conversations")
+      .sheet(item: $store.scope(
+        state: \.destination?.account,
+        action: \.destination.account
+      )) { store in
+        AccountSheet(store: store)
+      }
       .toolbar {
         ToolbarItem(placement: .primaryAction) {
-          Button(action: { send(.newConversationButtonTapped) }) {
-            Image(systemName: "plus")
+          Button(action: { send(.navigateToAccount) }) {
+            Image(systemName: "person.circle.fill")
           }
-          .buttonStyle(.borderedProminent)
         }
       }
     }
   }
 }
+
+// MARK: - SwiftUI Previews
+
+#Preview {
+  MainView(store: Store(initialState: MainReducer.State()) {
+    MainReducer()
+  })
+}
+
