@@ -1,12 +1,26 @@
 import ComposableArchitecture
 import SwiftUI
 
+struct ChatMessage2: Identifiable, Equatable, Codable {
+  let id: UUID
+  let authorId: String
+  let content: String
+  let createdAt = Date()
+}
+
 @Reducer
 struct MainReducer {
   @ObservableState
   struct State: Equatable {
     var myMessage = String()
-    var assistantChats: [String] = (0..<3).map({ _ in UUID().uuidString })
+    var chat: [ChatMessage2] = [
+      (0..<2).map({ _ in
+        ChatMessage2(id: .init(), authorId: "ai", content: UUID().uuidString)
+      }),
+      (0..<3).map({ _ in
+        ChatMessage2(id: .init(), authorId: "me", content: UUID().uuidString)
+      })
+    ].joined().flatMap({ $0 })
     @Presents var destination: Destination.State?
   }
   
@@ -98,20 +112,11 @@ struct MainView: View {
   @MainActor private var content: some View {
     ScrollView {
       VStack(spacing: 16) {
-        ForEach(store.assistantChats, id: \.self) { value in
-          Text(value.description)
-            .lineLimit(1)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .multilineTextAlignment(.leading)
-            .padding()
-            .background { Color(.systemGroupedBackground) }
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .padding(.horizontal)
-        }
-        .padding(.top)
+        ForEach(store.chat, content: ChatView.init)
+          .padding(.top)
       }
     }
-//    .background { Color(.systemGroupedBackground).opacity(0.5) }
+    //    .background { Color(.systemGroupedBackground).opacity(0.5) }
   }
   
   @MainActor private var footer: some View {
@@ -135,6 +140,64 @@ struct MainView: View {
       .buttonStyle(.plain)
     }
     .padding()
+  }
+}
+
+struct ChatView: View {
+  let value: ChatMessage2
+  
+  private var aiMessage: some View {
+    HStack {
+      Image(.coachF0)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 26, height: 26)
+        .clipShape(Circle())
+      
+      VStack(spacing: 4) {
+        Text(value.createdAt.formatted())
+          .font(.caption)
+          .foregroundStyle(.secondary)
+        
+        Text(value.content)
+          .frame(alignment: .leading)
+          .multilineTextAlignment(.leading)
+          .padding(.horizontal, 8)
+          .padding(.vertical, 4)
+          .background { Color(.systemGroupedBackground) }
+          .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+      }
+    }
+    .padding(.horizontal)
+    .frame(maxWidth: .infinity, alignment: .leading)
+  }
+
+  private var myMessage: some View {
+    HStack {
+      VStack(spacing: 4) {
+        Text(value.createdAt.formatted())
+          .font(.caption)
+          .foregroundStyle(.secondary)
+        
+        Text(value.content)
+          .foregroundColor(.white)
+          .multilineTextAlignment(.leading)
+          .padding(.horizontal, 8)
+          .padding(.vertical, 4)
+          .background { Color.accentColor }
+          .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+      }
+    }
+    .padding(.horizontal)
+    .frame(maxWidth: .infinity, alignment: .trailing)
+  }
+  
+  var body: some View {
+    if value.authorId == "ai" {
+      aiMessage
+    } else {
+      myMessage
+    }
   }
 }
 
