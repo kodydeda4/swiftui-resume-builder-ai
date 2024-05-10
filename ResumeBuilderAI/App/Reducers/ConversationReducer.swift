@@ -183,7 +183,8 @@ struct ConversationView: View {
   
   @ViewBuilder private func inputBar(scrollViewProxy: ScrollViewProxy) -> some View {
     HStack {
-      TextEditor(text: $store.inputText)
+//      TextEditor(text: $store.inputText)
+      TextField("Message", text: $store.inputText)
         .padding(.vertical, -8)
         .padding(.horizontal, -4)
         .frame(minHeight: 22, maxHeight: 300)
@@ -228,7 +229,7 @@ private struct ChatBubble: View {
   
   private let assistantBackgroundColor = Color(uiColor: UIColor.systemGray5)
   private let userForegroundColor = Color(uiColor: .white)
-  private let userBackgroundColor = Color(uiColor: .systemBlue)
+  private let userBackgroundColor = Color.accentColor
   
   var body: some View {
     HStack {
