@@ -12,8 +12,6 @@
 		3365D3652BEE62E800AF1542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3365D3642BEE62E800AF1542 /* Assets.xcassets */; };
 		3365D3692BEE62E800AF1542 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3365D3682BEE62E800AF1542 /* Preview Assets.xcassets */; };
 		3365D3732BEE62E800AF1542 /* ResumeBuilderAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3722BEE62E800AF1542 /* ResumeBuilderAITests.swift */; };
-		3365D37D2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D37C2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift */; };
-		3365D37F2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D37E2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift */; };
 		3365D38D2BEE637500AF1542 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D38C2BEE637500AF1542 /* ComposableArchitecture */; };
 		3365D38F2BEE650100AF1542 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D38E2BEE650100AF1542 /* Models.swift */; };
 		3365D3912BEE655600AF1542 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3902BEE655600AF1542 /* MainReducer.swift */; };
@@ -31,17 +29,14 @@
 		3365D3B52BEE8B0900AF1542 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3B42BEE8B0900AF1542 /* Tagged */; };
 		3365D3B82BEE8CB300AF1542 /* JSONEncoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3B72BEE8CB300AF1542 /* JSONEncoder+Extensions.swift */; };
 		3365D3BA2BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3B92BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift */; };
+		3365D41B2BEE991500AF1542 /* OpenAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D41A2BEE991500AF1542 /* OpenAIClient.swift */; };
+		3365D41E2BEE992D00AF1542 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D41D2BEE992D00AF1542 /* OpenAI */; };
+		3365D4202BEE997A00AF1542 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D41F2BEE997A00AF1542 /* Secrets.swift */; };
+		3365D4222BEE9C5D00AF1542 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4212BEE9C5D00AF1542 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3365D36F2BEE62E800AF1542 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3365D3552BEE62E700AF1542 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3365D35C2BEE62E700AF1542;
-			remoteInfo = ResumeBuilderAI;
-		};
-		3365D3792BEE62E800AF1542 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3365D3552BEE62E700AF1542 /* Project object */;
 			proxyType = 1;
@@ -59,9 +54,6 @@
 		3365D3682BEE62E800AF1542 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3365D36E2BEE62E800AF1542 /* ResumeBuilderAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResumeBuilderAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3365D3722BEE62E800AF1542 /* ResumeBuilderAITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAITests.swift; sourceTree = "<group>"; };
-		3365D3782BEE62E800AF1542 /* ResumeBuilderAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResumeBuilderAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3365D37C2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAIUITests.swift; sourceTree = "<group>"; };
-		3365D37E2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3365D38E2BEE650100AF1542 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3365D3902BEE655600AF1542 /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
 		3365D3922BEE65D600AF1542 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -71,6 +63,9 @@
 		3365D3B12BEE8ACE00AF1542 /* SupabaseDependencyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseDependencyClient.swift; sourceTree = "<group>"; };
 		3365D3B72BEE8CB300AF1542 /* JSONEncoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extensions.swift"; sourceTree = "<group>"; };
 		3365D3B92BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
+		3365D41A2BEE991500AF1542 /* OpenAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClient.swift; sourceTree = "<group>"; };
+		3365D41F2BEE997A00AF1542 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		3365D4212BEE9C5D00AF1542 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,18 +80,12 @@
 				3365D3A82BEE8AC000AF1542 /* Functions in Frameworks */,
 				3365D3A62BEE8AC000AF1542 /* Auth in Frameworks */,
 				3365D3AC2BEE8AC000AF1542 /* Realtime in Frameworks */,
+				3365D41E2BEE992D00AF1542 /* OpenAI in Frameworks */,
 				3365D38D2BEE637500AF1542 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3365D36B2BEE62E800AF1542 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3365D3752BEE62E800AF1542 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -111,7 +100,6 @@
 			children = (
 				3365D35F2BEE62E700AF1542 /* ResumeBuilderAI */,
 				3365D3712BEE62E800AF1542 /* ResumeBuilderAITests */,
-				3365D37B2BEE62E800AF1542 /* ResumeBuilderAIUITests */,
 				3365D35E2BEE62E700AF1542 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,7 +109,6 @@
 			children = (
 				3365D35D2BEE62E700AF1542 /* ResumeBuilderAI.app */,
 				3365D36E2BEE62E800AF1542 /* ResumeBuilderAITests.xctest */,
-				3365D3782BEE62E800AF1542 /* ResumeBuilderAIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,15 +141,6 @@
 			path = ResumeBuilderAITests;
 			sourceTree = "<group>";
 		};
-		3365D37B2BEE62E800AF1542 /* ResumeBuilderAIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3365D37C2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift */,
-				3365D37E2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift */,
-			);
-			path = ResumeBuilderAIUITests;
-			sourceTree = "<group>";
-		};
 		3365D3962BEE661E00AF1542 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +157,7 @@
 				3365D3942BEE65FE00AF1542 /* Authentication.swift */,
 				3365D3902BEE655600AF1542 /* MainReducer.swift */,
 				3365D3922BEE65D600AF1542 /* Onboarding.swift */,
+				3365D4212BEE9C5D00AF1542 /* Account.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -187,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3365D3B12BEE8ACE00AF1542 /* SupabaseDependencyClient.swift */,
+				3365D41A2BEE991500AF1542 /* OpenAIClient.swift */,
 			);
 			path = DependencyClients;
 			sourceTree = "<group>";
@@ -207,6 +187,7 @@
 				3365D3662BEE62E800AF1542 /* ResumeBuilderAI.entitlements */,
 				3365D3642BEE62E800AF1542 /* Assets.xcassets */,
 				3365D3602BEE62E700AF1542 /* Main.swift */,
+				3365D41F2BEE997A00AF1542 /* Secrets.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,6 +226,7 @@
 				3365D3AD2BEE8AC000AF1542 /* Storage */,
 				3365D3AF2BEE8AC000AF1542 /* Supabase */,
 				3365D3B42BEE8B0900AF1542 /* Tagged */,
+				3365D41D2BEE992D00AF1542 /* OpenAI */,
 			);
 			productName = ResumeBuilderAI;
 			productReference = 3365D35D2BEE62E700AF1542 /* ResumeBuilderAI.app */;
@@ -268,24 +250,6 @@
 			productReference = 3365D36E2BEE62E800AF1542 /* ResumeBuilderAITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3365D3772BEE62E800AF1542 /* ResumeBuilderAIUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3365D3882BEE62E800AF1542 /* Build configuration list for PBXNativeTarget "ResumeBuilderAIUITests" */;
-			buildPhases = (
-				3365D3742BEE62E800AF1542 /* Sources */,
-				3365D3752BEE62E800AF1542 /* Frameworks */,
-				3365D3762BEE62E800AF1542 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3365D37A2BEE62E800AF1542 /* PBXTargetDependency */,
-			);
-			name = ResumeBuilderAIUITests;
-			productName = ResumeBuilderAIUITests;
-			productReference = 3365D3782BEE62E800AF1542 /* ResumeBuilderAIUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -300,10 +264,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					3365D36D2BEE62E800AF1542 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 3365D35C2BEE62E700AF1542;
-					};
-					3365D3772BEE62E800AF1542 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 3365D35C2BEE62E700AF1542;
 					};
@@ -322,6 +282,7 @@
 				3365D38B2BEE637500AF1542 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */,
+				3365D41C2BEE992D00AF1542 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = 3365D35E2BEE62E700AF1542 /* Products */;
 			projectDirPath = "";
@@ -329,7 +290,6 @@
 			targets = (
 				3365D35C2BEE62E700AF1542 /* ResumeBuilderAI */,
 				3365D36D2BEE62E800AF1542 /* ResumeBuilderAITests */,
-				3365D3772BEE62E800AF1542 /* ResumeBuilderAIUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -351,13 +311,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3365D3762BEE62E800AF1542 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -373,9 +326,12 @@
 				3365D3912BEE655600AF1542 /* MainReducer.swift in Sources */,
 				3365D3B82BEE8CB300AF1542 /* JSONEncoder+Extensions.swift in Sources */,
 				3365D3A32BEE899900AF1542 /* SignInWithApple+Extensions.swift in Sources */,
+				3365D41B2BEE991500AF1542 /* OpenAIClient.swift in Sources */,
 				3365D3952BEE65FE00AF1542 /* Authentication.swift in Sources */,
 				3365D3B22BEE8ACE00AF1542 /* SupabaseDependencyClient.swift in Sources */,
+				3365D4202BEE997A00AF1542 /* Secrets.swift in Sources */,
 				3365D3BA2BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift in Sources */,
+				3365D4222BEE9C5D00AF1542 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,15 +343,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3365D3742BEE62E800AF1542 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3365D37D2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift in Sources */,
-				3365D37F2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -403,11 +350,6 @@
 			isa = PBXTargetDependency;
 			target = 3365D35C2BEE62E700AF1542 /* ResumeBuilderAI */;
 			targetProxy = 3365D36F2BEE62E800AF1542 /* PBXContainerItemProxy */;
-		};
-		3365D37A2BEE62E800AF1542 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3365D35C2BEE62E700AF1542 /* ResumeBuilderAI */;
-			targetProxy = 3365D3792BEE62E800AF1542 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -648,50 +590,6 @@
 			};
 			name = Release;
 		};
-		3365D3892BEE62E800AF1542 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ME637H7ZM9;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deda.ResumeBuilderAIUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ResumeBuilderAI;
-			};
-			name = Debug;
-		};
-		3365D38A2BEE62E800AF1542 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ME637H7ZM9;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deda.ResumeBuilderAIUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ResumeBuilderAI;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -722,15 +620,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3365D3882BEE62E800AF1542 /* Build configuration list for PBXNativeTarget "ResumeBuilderAIUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3365D3892BEE62E800AF1542 /* Debug */,
-				3365D38A2BEE62E800AF1542 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -756,6 +645,14 @@
 			requirement = {
 				kind = exactVersion;
 				version = 0.10.0;
+			};
+		};
+		3365D41C2BEE992D00AF1542 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -800,6 +697,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */;
 			productName = Tagged;
+		};
+		3365D41D2BEE992D00AF1542 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D41C2BEE992D00AF1542 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

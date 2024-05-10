@@ -1,5 +1,3 @@
-// Software Developed by Kody Deda.
-
 import AuthenticationServices
 import CryptoKit
 import SwiftUI

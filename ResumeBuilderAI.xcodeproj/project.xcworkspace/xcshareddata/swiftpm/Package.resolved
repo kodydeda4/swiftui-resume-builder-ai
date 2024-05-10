@@ -1,5 +1,5 @@
 {
-  "originHash" : "a6f8913ef924b9144d83c752b0144f5f85193e9d205b5703f7ad136337fdd230",
+  "originHash" : "49587e548286ebc57759027eef495e4030a6cb38da9456936476592b7417f551",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "84e546727d66f1adc5439debad16270d0fdd04e7",
         "version" : "4.2.2"
+      }
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI",
+      "state" : {
+        "revision" : "35afc9a6ee127b8f22a85a31aec2036a987478af",
+        "version" : "0.2.6"
       }
     },
     {

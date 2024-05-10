@@ -1,19 +1,19 @@
-// Software Developed by Kody Deda.
-
 import ComposableArchitecture
 import SwiftUI
+import Supabase
 
 @Reducer
 struct AppReducer {
   @ObservableState
   struct State: Equatable {
+    @Shared(.user) var user = Supabase.User.mock
     @Presents var destination: Destination.State?
   }
   
   enum Action: ViewAction {
     case view(View)
     case destination(PresentationAction<Destination.Action>)
-    case setDestination(Destination.State)
+    case fetchCurrentUserResponse(Supabase.User?)
     
     enum View {
       case task
@@ -35,23 +35,23 @@ struct AppReducer {
             await withTaskGroup(of: Void.self) { taskGroup in
               taskGroup.addTask {
                 for await user in await api.currentUser() {
-                  await send(.setDestination({
-                    guard user != nil else {
-                      return .authentication(.init())
-                    }
-//                    guard isOnboardingComplete else {
-//                      return .onboarding(.init())
-//                    }
-                    return .main(.init())
-                  }()))
+                  await send(.fetchCurrentUserResponse(user))
                 }
               }
             }
           }
         }
         
-      case let .setDestination(value):
-        state.destination = value
+      case let .fetchCurrentUserResponse(value):
+        guard let value else {
+          state.destination = .authentication(Authentication.State())
+          return .none
+        }
+//        guard isOnboardingComplete else {
+//          return .onboarding(.init())
+//        }
+        state.user = value
+        state.destination = .main(MainReducer.State())
         return .none
         
       case .destination:
