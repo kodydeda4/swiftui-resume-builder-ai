@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3365D3612BEE62E700AF1542 /* ResumeBuilderAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3602BEE62E700AF1542 /* ResumeBuilderAIApp.swift */; };
-		3365D3632BEE62E700AF1542 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3622BEE62E700AF1542 /* ContentView.swift */; };
+		3365D3612BEE62E700AF1542 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3602BEE62E700AF1542 /* Main.swift */; };
+		3365D3632BEE62E700AF1542 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3622BEE62E700AF1542 /* AppReducer.swift */; };
 		3365D3652BEE62E800AF1542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3365D3642BEE62E800AF1542 /* Assets.xcassets */; };
 		3365D3692BEE62E800AF1542 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3365D3682BEE62E800AF1542 /* Preview Assets.xcassets */; };
 		3365D3732BEE62E800AF1542 /* ResumeBuilderAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3722BEE62E800AF1542 /* ResumeBuilderAITests.swift */; };
 		3365D37D2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D37C2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift */; };
 		3365D37F2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D37E2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift */; };
+		3365D38D2BEE637500AF1542 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D38C2BEE637500AF1542 /* ComposableArchitecture */; };
+		3365D38F2BEE650100AF1542 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D38E2BEE650100AF1542 /* Models.swift */; };
+		3365D3912BEE655600AF1542 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3902BEE655600AF1542 /* MainReducer.swift */; };
+		3365D3932BEE65D600AF1542 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3922BEE65D600AF1542 /* Onboarding.swift */; };
+		3365D3952BEE65FE00AF1542 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3942BEE65FE00AF1542 /* Authentication.swift */; };
+		3365D3A12BEE871600AF1542 /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3A02BEE871600AF1542 /* RoundedRectangleButtonStyle.swift */; };
+		3365D3A32BEE899900AF1542 /* SignInWithApple+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3A22BEE899900AF1542 /* SignInWithApple+Extensions.swift */; };
+		3365D3A62BEE8AC000AF1542 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3A52BEE8AC000AF1542 /* Auth */; };
+		3365D3A82BEE8AC000AF1542 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3A72BEE8AC000AF1542 /* Functions */; };
+		3365D3AA2BEE8AC000AF1542 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3A92BEE8AC000AF1542 /* PostgREST */; };
+		3365D3AC2BEE8AC000AF1542 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3AB2BEE8AC000AF1542 /* Realtime */; };
+		3365D3AE2BEE8AC000AF1542 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3AD2BEE8AC000AF1542 /* Storage */; };
+		3365D3B02BEE8AC000AF1542 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3AF2BEE8AC000AF1542 /* Supabase */; };
+		3365D3B22BEE8ACE00AF1542 /* SupabaseDependencyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3B12BEE8ACE00AF1542 /* SupabaseDependencyClient.swift */; };
+		3365D3B52BEE8B0900AF1542 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3B42BEE8B0900AF1542 /* Tagged */; };
+		3365D3B82BEE8CB300AF1542 /* JSONEncoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3B72BEE8CB300AF1542 /* JSONEncoder+Extensions.swift */; };
+		3365D3BA2BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3B92BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +52,8 @@
 
 /* Begin PBXFileReference section */
 		3365D35D2BEE62E700AF1542 /* ResumeBuilderAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeBuilderAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3365D3602BEE62E700AF1542 /* ResumeBuilderAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAIApp.swift; sourceTree = "<group>"; };
-		3365D3622BEE62E700AF1542 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3365D3602BEE62E700AF1542 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		3365D3622BEE62E700AF1542 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		3365D3642BEE62E800AF1542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3365D3662BEE62E800AF1542 /* ResumeBuilderAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ResumeBuilderAI.entitlements; sourceTree = "<group>"; };
 		3365D3682BEE62E800AF1542 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +62,15 @@
 		3365D3782BEE62E800AF1542 /* ResumeBuilderAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResumeBuilderAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3365D37C2BEE62E800AF1542 /* ResumeBuilderAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAIUITests.swift; sourceTree = "<group>"; };
 		3365D37E2BEE62E800AF1542 /* ResumeBuilderAIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3365D38E2BEE650100AF1542 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3365D3902BEE655600AF1542 /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
+		3365D3922BEE65D600AF1542 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		3365D3942BEE65FE00AF1542 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		3365D3A02BEE871600AF1542 /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
+		3365D3A22BEE899900AF1542 /* SignInWithApple+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInWithApple+Extensions.swift"; sourceTree = "<group>"; };
+		3365D3B12BEE8ACE00AF1542 /* SupabaseDependencyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseDependencyClient.swift; sourceTree = "<group>"; };
+		3365D3B72BEE8CB300AF1542 /* JSONEncoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extensions.swift"; sourceTree = "<group>"; };
+		3365D3B92BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +78,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3365D3B02BEE8AC000AF1542 /* Supabase in Frameworks */,
+				3365D3AE2BEE8AC000AF1542 /* Storage in Frameworks */,
+				3365D3B52BEE8B0900AF1542 /* Tagged in Frameworks */,
+				3365D3AA2BEE8AC000AF1542 /* PostgREST in Frameworks */,
+				3365D3A82BEE8AC000AF1542 /* Functions in Frameworks */,
+				3365D3A62BEE8AC000AF1542 /* Auth in Frameworks */,
+				3365D3AC2BEE8AC000AF1542 /* Realtime in Frameworks */,
+				3365D38D2BEE637500AF1542 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +129,11 @@
 		3365D35F2BEE62E700AF1542 /* ResumeBuilderAI */ = {
 			isa = PBXGroup;
 			children = (
-				3365D3602BEE62E700AF1542 /* ResumeBuilderAIApp.swift */,
-				3365D3622BEE62E700AF1542 /* ContentView.swift */,
-				3365D3642BEE62E800AF1542 /* Assets.xcassets */,
-				3365D3662BEE62E800AF1542 /* ResumeBuilderAI.entitlements */,
+				3365D3962BEE661E00AF1542 /* App */,
+				3365D3992BEE665700AF1542 /* Library */,
 				3365D3672BEE62E800AF1542 /* Preview Content */,
+				3365D39A2BEE666400AF1542 /* Resources */,
+				3365D39F2BEE870B00AF1542 /* SwiftUI */,
 			);
 			path = ResumeBuilderAI;
 			sourceTree = "<group>";
@@ -129,6 +163,63 @@
 			path = ResumeBuilderAIUITests;
 			sourceTree = "<group>";
 		};
+		3365D3962BEE661E00AF1542 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3365D3982BEE663200AF1542 /* DependencyClients */,
+				3365D3972BEE662500AF1542 /* Reducers */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3365D3972BEE662500AF1542 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				3365D3622BEE62E700AF1542 /* AppReducer.swift */,
+				3365D3942BEE65FE00AF1542 /* Authentication.swift */,
+				3365D3902BEE655600AF1542 /* MainReducer.swift */,
+				3365D3922BEE65D600AF1542 /* Onboarding.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		3365D3982BEE663200AF1542 /* DependencyClients */ = {
+			isa = PBXGroup;
+			children = (
+				3365D3B12BEE8ACE00AF1542 /* SupabaseDependencyClient.swift */,
+			);
+			path = DependencyClients;
+			sourceTree = "<group>";
+		};
+		3365D3992BEE665700AF1542 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3365D38E2BEE650100AF1542 /* Models.swift */,
+				3365D3B72BEE8CB300AF1542 /* JSONEncoder+Extensions.swift */,
+				3365D3B92BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		3365D39A2BEE666400AF1542 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3365D3662BEE62E800AF1542 /* ResumeBuilderAI.entitlements */,
+				3365D3642BEE62E800AF1542 /* Assets.xcassets */,
+				3365D3602BEE62E700AF1542 /* Main.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3365D39F2BEE870B00AF1542 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				3365D3A02BEE871600AF1542 /* RoundedRectangleButtonStyle.swift */,
+				3365D3A22BEE899900AF1542 /* SignInWithApple+Extensions.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +236,16 @@
 			dependencies = (
 			);
 			name = ResumeBuilderAI;
+			packageProductDependencies = (
+				3365D38C2BEE637500AF1542 /* ComposableArchitecture */,
+				3365D3A52BEE8AC000AF1542 /* Auth */,
+				3365D3A72BEE8AC000AF1542 /* Functions */,
+				3365D3A92BEE8AC000AF1542 /* PostgREST */,
+				3365D3AB2BEE8AC000AF1542 /* Realtime */,
+				3365D3AD2BEE8AC000AF1542 /* Storage */,
+				3365D3AF2BEE8AC000AF1542 /* Supabase */,
+				3365D3B42BEE8B0900AF1542 /* Tagged */,
+			);
 			productName = ResumeBuilderAI;
 			productReference = 3365D35D2BEE62E700AF1542 /* ResumeBuilderAI.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +318,11 @@
 				Base,
 			);
 			mainGroup = 3365D3542BEE62E700AF1542;
+			packageReferences = (
+				3365D38B2BEE637500AF1542 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */,
+			);
 			productRefGroup = 3365D35E2BEE62E700AF1542 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +365,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3365D3632BEE62E700AF1542 /* ContentView.swift in Sources */,
-				3365D3612BEE62E700AF1542 /* ResumeBuilderAIApp.swift in Sources */,
+				3365D38F2BEE650100AF1542 /* Models.swift in Sources */,
+				3365D3632BEE62E700AF1542 /* AppReducer.swift in Sources */,
+				3365D3932BEE65D600AF1542 /* Onboarding.swift in Sources */,
+				3365D3612BEE62E700AF1542 /* Main.swift in Sources */,
+				3365D3A12BEE871600AF1542 /* RoundedRectangleButtonStyle.swift in Sources */,
+				3365D3912BEE655600AF1542 /* MainReducer.swift in Sources */,
+				3365D3B82BEE8CB300AF1542 /* JSONEncoder+Extensions.swift in Sources */,
+				3365D3A32BEE899900AF1542 /* SignInWithApple+Extensions.swift in Sources */,
+				3365D3952BEE65FE00AF1542 /* Authentication.swift in Sources */,
+				3365D3B22BEE8ACE00AF1542 /* SupabaseDependencyClient.swift in Sources */,
+				3365D3BA2BEE8CBC00AF1542 /* JSONDecoder+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +449,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -395,7 +510,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -416,7 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ResumeBuilderAI/ResumeBuilderAI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ResumeBuilderAI/Resources/ResumeBuilderAI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ResumeBuilderAI/Preview Content\"";
@@ -437,12 +552,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deda.ResumeBuilderAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ResumeBuilderAI/ResumeBuilderAI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ResumeBuilderAI/Resources/ResumeBuilderAI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ResumeBuilderAI/Preview Content\"";
@@ -475,12 +590,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deda.ResumeBuilderAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,7 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deda.ResumeBuilderAITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,7 +640,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deda.ResumeBuilderAITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,6 +732,76 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3365D38B2BEE637500AF1542 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 1.10.3;
+			};
+		};
+		3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 2.5.1;
+			};
+		};
+		3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-tagged";
+			requirement = {
+				kind = exactVersion;
+				version = 0.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3365D38C2BEE637500AF1542 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D38B2BEE637500AF1542 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		3365D3A52BEE8AC000AF1542 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		3365D3A72BEE8AC000AF1542 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		3365D3A92BEE8AC000AF1542 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		3365D3AB2BEE8AC000AF1542 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		3365D3AD2BEE8AC000AF1542 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		3365D3AF2BEE8AC000AF1542 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		3365D3B42BEE8B0900AF1542 /* Tagged */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */;
+			productName = Tagged;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3365D3552BEE62E700AF1542 /* Project object */;
 }
