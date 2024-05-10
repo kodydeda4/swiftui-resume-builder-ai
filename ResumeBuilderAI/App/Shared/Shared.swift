@@ -1,12 +1,11 @@
 import ComposableArchitecture
-import Supabase
 import Foundation
 
-extension PersistenceKey where Self == InMemoryKey<Supabase.User> {
+extension PersistenceKey where Self == InMemoryKey<SupabaseDependencyClient.User> {
   static var user: Self { .init("user") }
 }
 
-extension Supabase.User {
+extension SupabaseDependencyClient.User {
   static let mock = Self(
     id: UUID(),
     appMetadata: [:],

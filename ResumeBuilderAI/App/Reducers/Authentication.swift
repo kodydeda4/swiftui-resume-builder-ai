@@ -17,7 +17,7 @@ struct Authentication {
     }
   }
   
-  @Dependency(\.api) var api
+  @Dependency(\.supabase) var api
 
   var body: some ReducerOf<Self> {
     Reduce { state, action in

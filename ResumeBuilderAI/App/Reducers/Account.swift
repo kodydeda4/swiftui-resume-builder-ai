@@ -1,12 +1,11 @@
 import ComposableArchitecture
 import SwiftUI
-import Supabase
 
 @Reducer
 struct Account {
   @ObservableState
   struct State: Equatable {
-    @Shared(.user) var user = Supabase.User.mock
+    @Shared(.user) var user = SupabaseDependencyClient.User.mock
     @Presents var destination: Destination.State?
   }
   
@@ -21,7 +20,7 @@ struct Account {
     }
   }
   
-  @Dependency(\.api) var api
+  @Dependency(\.supabase) var api
   @Dependency(\.dismiss) var dismiss
   
   var body: some ReducerOf<Self> {

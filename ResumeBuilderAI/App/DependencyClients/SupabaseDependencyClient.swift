@@ -3,32 +3,21 @@ import Supabase
 import SwiftUI
 import Tagged
 
+/// Supabase is an open source Firebase alternative.
+/// https://github.com/supabase/supabase-swift
 @DependencyClient
-struct ApiClient: DependencyKey {
+struct SupabaseDependencyClient: DependencyKey {
   var signIn: @Sendable (SignInWithAppleToken) async throws -> User
   var signOut: @Sendable () async throws -> Void
-  var currentUser: @Sendable () async -> AsyncStream<Supabase.User?> = { .finished }
-  var currentUserValue: @Sendable () async throws -> Supabase.User
+  var currentUser: @Sendable () async -> AsyncStream<User?> = { .finished }
   
   struct Failure: Equatable, Error {}
-}
-
-extension DependencyValues {
-  var api: ApiClient {
-    get { self[ApiClient.self] }
-    set { self[ApiClient.self] = newValue }
-  }
-}
-
-extension ApiClient {
+  typealias User = Supabase.User
+  
   static var liveValue: Self {
     let supabase = SupabaseClient(
       supabaseURL: Secrets.supabaseURL,
-      supabaseKey: Secrets.supabaseKey,
-      options: .init(db: .init(
-        encoder: .liveValue,
-        decoder: .liveValue
-      ))
+      supabaseKey: Secrets.supabaseKey
     )
     
     return Self(
@@ -43,38 +32,34 @@ extension ApiClient {
         try await supabase.auth.signOut()
       },
       currentUser: {
-        await supabase.auth.currentUser()
-      },
-      currentUserValue: {
-        try await supabase.auth.user()
+        AsyncStream { continuation in
+          let task = Task {
+            while !Task.isCancelled {
+              await continuation.yield(try? supabase.auth.user())
+              
+              for await value in await supabase.auth.authStateChanges {
+                switch value.event {
+                  
+                case .signedIn,
+                    .signedOut:
+                  await continuation.yield(try? supabase.auth.user())
+                  
+                default:
+                  break
+                }
+              }
+            }
+          }
+          continuation.onTermination = { _ in task.cancel() }
+        }
       }
     )
   }
 }
 
-private extension Supabase.AuthClient {
-  @Sendable
-  func currentUser() async -> AsyncStream<Supabase.User?> {
-    AsyncStream { continuation in
-      let task = Task {
-        while !Task.isCancelled {
-          await continuation.yield(try? user())
-          
-          for await value in authStateChanges {
-            switch value.event {
-              
-            case .signedIn,
-                .signedOut:
-              await continuation.yield(try? user())
-              
-            default:
-              break
-            }
-          }
-        }
-      }
-      continuation.onTermination = { _ in task.cancel() }
-    }
+extension DependencyValues {
+  var supabase: SupabaseDependencyClient {
+    get { self[SupabaseDependencyClient.self] }
+    set { self[SupabaseDependencyClient.self] = newValue }
   }
 }
-

@@ -1,26 +1,24 @@
 import ComposableArchitecture
 import SwiftUI
-import Supabase
 
 @Reducer
 struct AppReducer {
   @ObservableState
   struct State: Equatable {
-    @Shared(.user) var user = Supabase.User.mock
     @Presents var destination: Destination.State?
   }
   
   enum Action: ViewAction {
     case view(View)
     case destination(PresentationAction<Destination.Action>)
-    case fetchCurrentUserResponse(Supabase.User?)
+    case fetchCurrentUserResponse(SupabaseDependencyClient.User?)
     
     enum View {
       case task
     }
   }
   
-  @Dependency(\.api) var api
+  @Dependency(\.supabase) var api
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
@@ -33,8 +31,8 @@ struct AppReducer {
           return .run { send in
             await withTaskGroup(of: Void.self) { taskGroup in
               taskGroup.addTask {
-                for await user in await api.currentUser() {
-                  await send(.fetchCurrentUserResponse(user))
+                for await value in await api.currentUser() {
+                  await send(.fetchCurrentUserResponse(value))
                 }
               }
             }
@@ -46,10 +44,7 @@ struct AppReducer {
           state.destination = .authentication(Authentication.State())
           return .none
         }
-//        guard isOnboardingComplete else {
-//          return .onboarding(.init())
-//        }
-        state.user = value
+        @Shared(.user) var user = value
         state.destination = .main(MainReducer.State())
         return .none
         
@@ -64,7 +59,6 @@ struct AppReducer {
   @Reducer(state: .equatable)
   enum Destination {
     case authentication(Authentication)
-    case onboarding(Onboarding)
     case main(MainReducer)
   }
 }
@@ -84,9 +78,6 @@ struct AppView: View {
       
       case let .authentication(store):
         AuthenticationView(store: store)
-        
-      case let .onboarding(store):
-        OnboardingView(store: store)
         
       case let .main(store):
         MainView(store: store)
