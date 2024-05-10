@@ -30,7 +30,6 @@ struct AppReducer {
         switch action {
           
         case .task:
-//          return .run { [isOnboardingComplete = state.settings.isOnboardingComplete] send in
           return .run { send in
             await withTaskGroup(of: Void.self) { taskGroup in
               taskGroup.addTask {

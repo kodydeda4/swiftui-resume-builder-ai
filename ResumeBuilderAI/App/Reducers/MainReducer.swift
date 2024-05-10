@@ -6,6 +6,7 @@ struct MainReducer {
   @ObservableState
   struct State: Equatable {
     var myMessage = String()
+    var assistantChats: [String] = (0..<3).map({ _ in UUID().uuidString })
     @Presents var destination: Destination.State?
   }
   
@@ -63,16 +64,10 @@ struct MainView: View {
     NavigationStack {
       VStack(spacing: 0) {
         Divider()
-        
-        Color.blue.opacity(0.01)
-        
+          .padding(.top, 4)
+        content
         Divider()
-        
-        VStack {
-          TextField("Your message", text: $store.myMessage)
-            .textFieldStyle(.roundedBorder)
-            .padding()
-        }
+        footer
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .navigationTitle("Career Coach")
@@ -86,7 +81,7 @@ struct MainView: View {
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
           Text("Career Coach")
-            .fontWeight(.semibold)
+            .fontWeight(.bold)
         }
         ToolbarItem(placement: .principal) {
           Text("")
@@ -98,6 +93,48 @@ struct MainView: View {
         }
       }
     }
+  }
+  
+  @MainActor private var content: some View {
+    ScrollView {
+      VStack(spacing: 16) {
+        ForEach(store.assistantChats, id: \.self) { value in
+          Text(value.description)
+            .lineLimit(1)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .multilineTextAlignment(.leading)
+            .padding()
+            .background { Color(.systemGroupedBackground) }
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .padding(.horizontal)
+        }
+        .padding(.top)
+      }
+    }
+//    .background { Color(.systemGroupedBackground).opacity(0.5) }
+  }
+  
+  @MainActor private var footer: some View {
+    HStack {
+      TextField("Your message", text: $store.myMessage)
+        .padding(.vertical , 8)
+        .padding(.horizontal, 16)
+        .overlay {
+          RoundedRectangle(cornerRadius: 30, style: .continuous)
+            .strokeBorder()
+            .foregroundColor(Color(.separator))
+        }
+      
+      Button(action: {}) {
+        Image(systemName: "arrow.up.circle.fill")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 26)
+          .foregroundColor(.accentColor)
+      }
+      .buttonStyle(.plain)
+    }
+    .padding()
   }
 }
 

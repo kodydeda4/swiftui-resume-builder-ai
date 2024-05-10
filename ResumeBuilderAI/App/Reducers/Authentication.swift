@@ -1,7 +1,6 @@
 import ComposableArchitecture
 import SwiftUI
 import AuthenticationServices
-import Supabase
 
 @Reducer
 struct Authentication {
@@ -11,7 +10,7 @@ struct Authentication {
   }
   enum Action: ViewAction {
     case view(View)
-    case authenticationResponse(Result<Supabase.User?, Error>)
+    case authenticationResponse(Result<Void, Error>)
     
     enum View {
       case continueWithAppleButtonTapped(SignInWithAppleToken)
@@ -27,14 +26,15 @@ struct Authentication {
       case let .view(.continueWithAppleButtonTapped(token)):
         return .run { send in
           await send(.authenticationResponse(Result {
-            try await api.signIn(token)
+            _ = try await api.signIn(token)
           }))
         }
         
-      case let .authenticationResponse(.success(value)):
+      case .authenticationResponse(.success):
         return .none
         
       case let .authenticationResponse(.failure(error)):
+        print(error.localizedDescription)
         return .none
 
       }
