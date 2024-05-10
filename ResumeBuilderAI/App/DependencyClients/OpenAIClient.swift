@@ -1,13 +1,15 @@
 import ComposableArchitecture
 import OpenAI
+import Foundation
 
 /// OpenAI Documentation
 /// https://platform.openai.com/docs/overview
 /// https://github.com/MacPaw/OpenAI
 @DependencyClient
 struct OpenAIClient: DependencyKey {
-  var chat: @Sendable () async -> AsyncThrowingStream<CompletionsResult, Error> = { .finished() }
-  
+  var chat: @Sendable (Conversation, Model) async ->
+  AsyncThrowingStream<ChatStreamResult, Error> = { _,_  in .finished() }
+
   static var liveValue: Self {
     let openAI = OpenAI(configuration: OpenAI.Configuration(
       token: Secrets.openAIToken,
@@ -16,25 +18,30 @@ struct OpenAIClient: DependencyKey {
     ))
 
     return Self(
-      chat: {
-        AsyncThrowingStream { continuation in
-          let task = Task {
-            while !Task.isCancelled {
-              for try await value in openAI.completionsStream(
-                query: .init(
-                  model: .gpt3_5Turbo,
-                  prompt: "Hi, I'm trying to build a resume."
-                )
-              ) {
-                continuation.yield(value)
-              }
-            }
-          }
-          continuation.onTermination = { _ in task.cancel() }
-        }
+      chat: { conversation, model in
+        openAI.chatsStream(
+          query: ChatQuery(
+            messages: conversation.messages.map { message in
+              ChatQuery.ChatCompletionMessageParam(role: message.role, content: message.content)!
+            },
+            model: model
+          )
+        )
       }
     )
   }
+}
+
+struct Conversation: Equatable, Identifiable {
+  let id: String
+  var messages: [Message]
+}
+
+struct Message: Equatable, Codable, Hashable, Identifiable {
+  var id: String
+  var role: ChatQuery.ChatCompletionMessageParam.Role
+  var content: String
+  var createdAt: Date
 }
 
 extension DependencyValues {

@@ -6,8 +6,6 @@ public final class ChatStore: ObservableObject {
   public var openAIClient = OpenAI(apiToken: "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")
   let idProvider: () -> String = { UUID().uuidString }
 
-
-  
   @Published var conversations: [Conversation] = []
   @Published var conversationErrors: [Conversation.ID: Error] = [:]
   @Published var selectedConversationID: Conversation.ID?
@@ -143,30 +141,4 @@ public final class ChatStore: ObservableObject {
   }
 }
 
-import Foundation
 
-struct Conversation {
-  init(id: String, messages: [Message] = []) {
-    self.id = id
-    self.messages = messages
-  }
-  
-  typealias ID = String
-  
-  let id: String
-  var messages: [Message]
-}
-
-extension Conversation: Equatable, Identifiable {}
-
-import Foundation
-import OpenAI
-
-struct Message {
-  var id: String
-  var role: ChatQuery.ChatCompletionMessageParam.Role
-  var content: String
-  var createdAt: Date
-}
-
-extension Message: Equatable, Codable, Hashable, Identifiable {}
