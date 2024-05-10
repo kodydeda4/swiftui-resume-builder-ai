@@ -129,7 +129,7 @@ struct ConversationView: View {
         VStack {
           List {
             ForEach(store.conversation.messages) { message in
-              ChatBubble3(message: message)
+              ChatBubble(message: message)
             }
             .listRowSeparator(.hidden)
           }
@@ -185,7 +185,7 @@ struct ConversationView: View {
   }
 }
 
-struct ChatBubble3: View {
+private struct ChatBubble: View {
   let message: Message
   
   private let assistantBackgroundColor = Color(uiColor: UIColor.systemGray5)
