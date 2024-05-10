@@ -10,6 +10,7 @@ struct ConversationReducer {
     let chatModel = Model.gpt3_5Turbo
     var conversation: Conversation
     var inputText = String()
+    @Presents var destination: Destination.State?
     
     init() {
       @Dependency(\.uuid) var uuid
@@ -18,11 +19,13 @@ struct ConversationReducer {
   }
   enum Action: ViewAction {
     case view(View)
+    case destination(PresentationAction<Destination.Action>)
     case chatStreamResponse(Result<ChatStreamResult, Error>)
     
     enum View: BindableAction {
       case task
       case sendMessageButtonTapped
+      case navigateToAccount
       case binding(BindingAction<State>)
     }
   }
@@ -66,6 +69,10 @@ struct ConversationReducer {
           state.inputText = ""
           state.conversation.messages.append(message)
           return .send(.view(.task))
+          
+        case .navigateToAccount:
+          state.destination = .account(.init())
+          return .none
         }
         
       case let .chatStreamResponse(.success(partialChatResult)):
@@ -112,8 +119,17 @@ struct ConversationReducer {
         
       case .chatStreamResponse(.failure):
         return .none
+        
+      case .destination:
+        return .none
       }
     }
+    .ifLet(\.$destination, action: \.destination)
+  }
+  
+  @Reducer(state: .equatable)
+  enum Destination {
+    case account(Account)
   }
 }
 
@@ -126,21 +142,43 @@ struct ConversationView: View {
   var body: some View {
     NavigationStack {
       ScrollViewReader { scrollViewProxy in
-        VStack {
-          List {
-            ForEach(store.conversation.messages) { message in
-              ChatBubble(message: message)
-            }
-            .listRowSeparator(.hidden)
-          }
-          .listStyle(.plain)
-          .animation(.default, value: store.conversation.messages)
-          
+        VStack(spacing: 0) {
+          Divider()
+          content
+          Divider().padding(.bottom)
           inputBar(scrollViewProxy: scrollViewProxy)
         }
       }
       .task { await send(.task).finish() }
+      .sheet(item: $store.scope(
+        state: \.destination?.account,
+        action: \.destination.account
+      )) { store in
+        AccountSheet(store: store)
+      }
+      .toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+          Text("Resume Builder AI")
+            .bold()
+        }
+        ToolbarItem(placement: .primaryAction) {
+          Button(action: { send(.navigateToAccount) }) {
+            Image(systemName: "person.circle.fill")
+          }
+        }
+      }
     }
+  }
+  
+  @MainActor private var content: some View {
+    List {
+      ForEach(store.conversation.messages) { message in
+        ChatBubble(message: message)
+      }
+      .listRowSeparator(.hidden)
+    }
+    .listStyle(.plain)
+    .animation(.default, value: store.conversation.messages)
   }
   
   @ViewBuilder private func inputBar(scrollViewProxy: ScrollViewProxy) -> some View {
