@@ -24,7 +24,6 @@
 		3365D3AE2BEE8AC000AF1542 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3AD2BEE8AC000AF1542 /* Storage */; };
 		3365D3B02BEE8AC000AF1542 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3AF2BEE8AC000AF1542 /* Supabase */; };
 		3365D3B22BEE8ACE00AF1542 /* SupabaseDependencyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3B12BEE8ACE00AF1542 /* SupabaseDependencyClient.swift */; };
-		3365D3B52BEE8B0900AF1542 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D3B42BEE8B0900AF1542 /* Tagged */; };
 		3365D41B2BEE991500AF1542 /* OpenAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D41A2BEE991500AF1542 /* OpenAIClient.swift */; };
 		3365D41E2BEE992D00AF1542 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D41D2BEE992D00AF1542 /* OpenAI */; };
 		3365D4202BEE997A00AF1542 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D41F2BEE997A00AF1542 /* Secrets.swift */; };
@@ -71,7 +70,6 @@
 			files = (
 				3365D3B02BEE8AC000AF1542 /* Supabase in Frameworks */,
 				3365D3AE2BEE8AC000AF1542 /* Storage in Frameworks */,
-				3365D3B52BEE8B0900AF1542 /* Tagged in Frameworks */,
 				3365D3AA2BEE8AC000AF1542 /* PostgREST in Frameworks */,
 				3365D3A82BEE8AC000AF1542 /* Functions in Frameworks */,
 				3365D3A62BEE8AC000AF1542 /* Auth in Frameworks */,
@@ -219,7 +217,6 @@
 				3365D3AB2BEE8AC000AF1542 /* Realtime */,
 				3365D3AD2BEE8AC000AF1542 /* Storage */,
 				3365D3AF2BEE8AC000AF1542 /* Supabase */,
-				3365D3B42BEE8B0900AF1542 /* Tagged */,
 				3365D41D2BEE992D00AF1542 /* OpenAI */,
 			);
 			productName = ResumeBuilderAI;
@@ -275,7 +272,6 @@
 			packageReferences = (
 				3365D38B2BEE637500AF1542 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */,
-				3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */,
 				3365D41C2BEE992D00AF1542 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = 3365D35E2BEE62E700AF1542 /* Products */;
@@ -631,14 +627,6 @@
 				version = 2.5.1;
 			};
 		};
-		3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-tagged";
-			requirement = {
-				kind = exactVersion;
-				version = 0.10.0;
-			};
-		};
 		3365D41C2BEE992D00AF1542 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MacPaw/OpenAI";
@@ -684,11 +672,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3365D3A42BEE8AC000AF1542 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
-		};
-		3365D3B42BEE8B0900AF1542 /* Tagged */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3365D3B32BEE8B0900AF1542 /* XCRemoteSwiftPackageReference "swift-tagged" */;
-			productName = Tagged;
 		};
 		3365D41D2BEE992D00AF1542 /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
