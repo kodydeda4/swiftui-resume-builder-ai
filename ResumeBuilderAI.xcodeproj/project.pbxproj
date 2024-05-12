@@ -11,7 +11,7 @@
 		3365D3632BEE62E700AF1542 /* _AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3622BEE62E700AF1542 /* _AppReducer.swift */; };
 		3365D3652BEE62E800AF1542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3365D3642BEE62E800AF1542 /* Assets.xcassets */; };
 		3365D3692BEE62E800AF1542 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3365D3682BEE62E800AF1542 /* Preview Assets.xcassets */; };
-		3365D3732BEE62E800AF1542 /* ResumeBuilderAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3722BEE62E800AF1542 /* ResumeBuilderAITests.swift */; };
+		3365D3732BEE62E800AF1542 /* AppReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3722BEE62E800AF1542 /* AppReducerTests.swift */; };
 		3365D38D2BEE637500AF1542 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D38C2BEE637500AF1542 /* ComposableArchitecture */; };
 		3365D3912BEE655600AF1542 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3902BEE655600AF1542 /* MainReducer.swift */; };
 		3365D3952BEE65FE00AF1542 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D3942BEE65FE00AF1542 /* Authentication.swift */; };
@@ -30,6 +30,8 @@
 		3365D4222BEE9C5D00AF1542 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4212BEE9C5D00AF1542 /* Account.swift */; };
 		3365D42F2BEEC24700AF1542 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D42E2BEEC24700AF1542 /* Shared.swift */; };
 		3365D4362BEECBA300AF1542 /* ChatReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4352BEECBA300AF1542 /* ChatReducer.swift */; };
+		33AA03612BF17CF300921467 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA03602BF17CF300921467 /* AccountTests.swift */; };
+		33AA03632BF17DD800921467 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA03622BF17DD800921467 /* AuthenticationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,7 @@
 		3365D3662BEE62E800AF1542 /* ResumeBuilderAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ResumeBuilderAI.entitlements; sourceTree = "<group>"; };
 		3365D3682BEE62E800AF1542 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3365D36E2BEE62E800AF1542 /* ResumeBuilderAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResumeBuilderAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3365D3722BEE62E800AF1542 /* ResumeBuilderAITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBuilderAITests.swift; sourceTree = "<group>"; };
+		3365D3722BEE62E800AF1542 /* AppReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerTests.swift; sourceTree = "<group>"; };
 		3365D3902BEE655600AF1542 /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
 		3365D3942BEE65FE00AF1542 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		3365D3A02BEE871600AF1542 /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		3365D4212BEE9C5D00AF1542 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		3365D42E2BEEC24700AF1542 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		3365D4352BEECBA300AF1542 /* ChatReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReducer.swift; sourceTree = "<group>"; };
+		33AA03602BF17CF300921467 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
+		33AA03622BF17DD800921467 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 		3365D3712BEE62E800AF1542 /* ResumeBuilderAITests */ = {
 			isa = PBXGroup;
 			children = (
-				3365D3722BEE62E800AF1542 /* ResumeBuilderAITests.swift */,
+				3365D3722BEE62E800AF1542 /* AppReducerTests.swift */,
+				33AA03602BF17CF300921467 /* AccountTests.swift */,
+				33AA03622BF17DD800921467 /* AuthenticationTests.swift */,
 			);
 			path = ResumeBuilderAITests;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3365D3732BEE62E800AF1542 /* ResumeBuilderAITests.swift in Sources */,
+				3365D3732BEE62E800AF1542 /* AppReducerTests.swift in Sources */,
+				33AA03632BF17DD800921467 /* AuthenticationTests.swift in Sources */,
+				33AA03612BF17CF300921467 /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

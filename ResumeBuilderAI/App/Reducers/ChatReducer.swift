@@ -11,11 +11,6 @@ struct ChatReducer {
     var conversation: Conversation
     var inputText = String()
     @Presents var destination: Destination.State?
-    
-    init() {
-      @Dependency(\.uuid) var uuid
-      self.conversation = Conversation(id: uuid().uuidString, messages: [])
-    }
   }
   enum Action: ViewAction {
     case view(View)
@@ -166,7 +161,7 @@ struct ChatView: View {
   
   @ViewBuilder private func inputBar(scrollViewProxy: ScrollViewProxy) -> some View {
     HStack {
-//      TextEditor(text: $store.inputText)
+      //      TextEditor(text: $store.inputText)
       TextField("Message", text: $store.inputText)
         .padding(.vertical, -8)
         .padding(.horizontal, -4)
@@ -254,7 +249,9 @@ private struct ChatBubble: View {
 // MARK: - SwiftUI Previews
 
 #Preview {
-  ChatView(store: Store(initialState: ChatReducer.State()) {
+  ChatView(store: Store(initialState: ChatReducer.State(
+    conversation: Conversation(id: UUID().uuidString, messages: []))
+  ) {
     ChatReducer()
   })
 }

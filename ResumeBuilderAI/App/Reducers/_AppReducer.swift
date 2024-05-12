@@ -5,6 +5,7 @@ import SwiftUI
 struct AppReducer {
   @ObservableState
   struct State: Equatable {
+    @Shared(.user) var user = SupabaseDependencyClient.User.mock
     @Presents var destination: Destination.State?
   }
   
@@ -19,7 +20,8 @@ struct AppReducer {
   }
   
   @Dependency(\.supabase) var supabase
-  
+  @Dependency(\.uuid) var uuid
+
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
@@ -44,8 +46,14 @@ struct AppReducer {
           state.destination = .authentication(Authentication.State())
           return .none
         }
-        @Shared(.user) var user = value
-        state.destination = .main(MainReducer.State())
+        state.user = value
+        state.destination = .main(
+          MainReducer.State(
+            chat: ChatReducer.State(conversation: Conversation(
+              id: self.uuid().uuidString,
+              messages: []
+            )))
+        )
         return .none
         
       case .destination:
