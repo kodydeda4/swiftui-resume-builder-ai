@@ -29,7 +29,7 @@
 		3365D4202BEE997A00AF1542 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D41F2BEE997A00AF1542 /* Secrets.swift */; };
 		3365D4222BEE9C5D00AF1542 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4212BEE9C5D00AF1542 /* Account.swift */; };
 		3365D42F2BEEC24700AF1542 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D42E2BEEC24700AF1542 /* Shared.swift */; };
-		3365D4362BEECBA300AF1542 /* ConversationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4352BEECBA300AF1542 /* ConversationReducer.swift */; };
+		3365D4362BEECBA300AF1542 /* ChatReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4352BEECBA300AF1542 /* ChatReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,7 @@
 		3365D41F2BEE997A00AF1542 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		3365D4212BEE9C5D00AF1542 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		3365D42E2BEEC24700AF1542 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
-		3365D4352BEECBA300AF1542 /* ConversationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationReducer.swift; sourceTree = "<group>"; };
+		3365D4352BEECBA300AF1542 /* ChatReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 				3365D4212BEE9C5D00AF1542 /* Account.swift */,
 				3365D3942BEE65FE00AF1542 /* Authentication.swift */,
 				3365D3902BEE655600AF1542 /* MainReducer.swift */,
-				3365D4352BEECBA300AF1542 /* ConversationReducer.swift */,
+				3365D4352BEECBA300AF1542 /* ChatReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 				3365D42F2BEEC24700AF1542 /* Shared.swift in Sources */,
 				3365D3A32BEE899900AF1542 /* SignInWithApple+Extensions.swift in Sources */,
 				3365D41B2BEE991500AF1542 /* OpenAIClient.swift in Sources */,
-				3365D4362BEECBA300AF1542 /* ConversationReducer.swift in Sources */,
+				3365D4362BEECBA300AF1542 /* ChatReducer.swift in Sources */,
 				3365D3952BEE65FE00AF1542 /* Authentication.swift in Sources */,
 				3365D3B22BEE8ACE00AF1542 /* SupabaseDependencyClient.swift in Sources */,
 				3365D4202BEE997A00AF1542 /* Secrets.swift in Sources */,

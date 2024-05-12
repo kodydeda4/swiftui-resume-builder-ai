@@ -3,7 +3,7 @@ import SwiftUI
 import OpenAI
 
 @Reducer
-struct ConversationReducer {
+struct ChatReducer {
   @ObservableState
   struct State: Identifiable, Equatable {
     var id: Conversation.ID { self.conversation.id }
@@ -118,9 +118,9 @@ struct ConversationReducer {
 
 // MARK: - SwiftUI
 
-@ViewAction(for: ConversationReducer.self)
-struct ConversationView: View {
-  @Bindable var store: StoreOf<ConversationReducer>
+@ViewAction(for: ChatReducer.self)
+struct ChatView: View {
+  @Bindable var store: StoreOf<ChatReducer>
   
   var body: some View {
     NavigationStack {
@@ -254,8 +254,8 @@ private struct ChatBubble: View {
 // MARK: - SwiftUI Previews
 
 #Preview {
-  ConversationView(store: Store(initialState: ConversationReducer.State()) {
-    ConversationReducer()
+  ChatView(store: Store(initialState: ChatReducer.State()) {
+    ChatReducer()
   })
 }
 

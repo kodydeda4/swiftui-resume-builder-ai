@@ -6,14 +6,14 @@ import OpenAI
 struct MainReducer {
   @ObservableState
   struct State: Equatable {
-    var conversation = ConversationReducer.State()
+    var conversation = ChatReducer.State()
   }
   enum Action {
-    case conversation(ConversationReducer.Action)
+    case conversation(ChatReducer.Action)
   }
   var body: some ReducerOf<Self> {
     Scope(state: \.conversation, action: \.conversation) {
-      ConversationReducer()
+      ChatReducer()
     }
   }
 }
@@ -26,7 +26,7 @@ struct MainView: View {
   var body: some View {
     NavigationStack {
       TabView {
-        ConversationView(store: store.scope(state: \.conversation, action: \.conversation))
+        ChatView(store: store.scope(state: \.conversation, action: \.conversation))
           .tabItem { Label("Conversation", systemImage: "eyeglasses") }
         
         NavigationStack {
