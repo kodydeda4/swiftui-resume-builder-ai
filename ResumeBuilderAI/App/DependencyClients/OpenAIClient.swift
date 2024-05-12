@@ -34,7 +34,7 @@ struct OpenAIClient: DependencyKey {
 
 struct Conversation: Equatable, Identifiable {
   let id: String
-  var messages: [Message]
+  var messages: IdentifiedArrayOf<Message>
 }
 
 struct Message: Equatable, Codable, Hashable, Identifiable {

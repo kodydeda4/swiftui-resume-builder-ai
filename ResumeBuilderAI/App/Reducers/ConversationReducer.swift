@@ -76,27 +76,27 @@ struct ConversationReducer {
         }
         
       case let .chatStreamResponse(.success(partialChatResult)):
-        for choice in partialChatResult.choices {
-          let existingMessages = state.conversation.messages
+        partialChatResult.choices.forEach { choice in
           let message = Message(
             id: partialChatResult.id,
             role: choice.delta.role ?? .assistant,
             content: choice.delta.content ?? "",
             createdAt: Date(timeIntervalSince1970: TimeInterval(partialChatResult.created))
           )
-          if let existingMessageIndex = existingMessages.firstIndex(where: { $0.id == partialChatResult.id }) {
-            // Meld into previous message
-            let previousMessage = existingMessages[existingMessageIndex]
-            let combinedMessage = Message(
-              id: message.id, // id stays the same for different deltas
-              role: message.role,
-              content: previousMessage.content + message.content,
-              createdAt: message.createdAt
-            )
-            state.conversation.messages[existingMessageIndex] = combinedMessage
-          } else {
+          
+          guard let existingMessage = state.conversation.messages[id: partialChatResult.id] else {
             state.conversation.messages.append(message)
+            return
           }
+          
+          // Meld into previous message
+          let previousMessage = existingMessage
+          state.conversation.messages[id: partialChatResult.id] = Message(
+            id: message.id, // id stays the same for different deltas
+            role: message.role,
+            content: previousMessage.content + message.content,
+            createdAt: message.createdAt
+          )
         }
         return .none
         
