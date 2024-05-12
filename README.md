@@ -6,12 +6,12 @@ App demo that uses `SwiftUI`, `Supabase`, `OpenAI`, and `ComposableArchitecture`
 
 ## Overview
 
-<img width="140" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/8ce58ad2-4a96-4377-838d-c6230ca12ba3">
-<img width="140" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/66d9d175-9041-4336-be0e-0189edb72495">
-<img width="140" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/1c42f091-048f-431c-bd9e-a1530393008c">
-<img width="140" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/cd47d17d-ac43-4026-853c-0437e1c27863">
-<img width="140" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/11515433-e5bb-46b7-a16a-05779714618a">
-<img width="140" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/d48eb07f-b61e-4759-9758-895576285a00">
+<img width="175" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/8ce58ad2-4a96-4377-838d-c6230ca12ba3">
+<img width="175" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/66d9d175-9041-4336-be0e-0189edb72495">
+<img width="175" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/1c42f091-048f-431c-bd9e-a1530393008c">
+<img width="175" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/cd47d17d-ac43-4026-853c-0437e1c27863">
+<img width="175" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/11515433-e5bb-46b7-a16a-05779714618a">
+<img width="175" src="https://github.com/kodydeda4/swiftui-resume-builder-ai/assets/45678211/d48eb07f-b61e-4759-9758-895576285a00">
 
 ## 1. Third Party APIs
 
