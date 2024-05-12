@@ -43,4 +43,4 @@ case .task:
 
 ## 4. 🚨 Warning
 
-OpenAI will automatically detect public api keys and delete them. You will have to [create your own OpenAI api key](https://platform.openai.com/docs/overview) to get this running.
+OpenAI will automatically detect public api keys and delete them. You will have to [create your own OpenAI api key](https://platform.openai.com/docs/overview) to get this running and update `Secrets.swift`
