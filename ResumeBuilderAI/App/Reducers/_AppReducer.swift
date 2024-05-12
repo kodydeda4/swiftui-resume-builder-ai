@@ -18,7 +18,7 @@ struct AppReducer {
     }
   }
   
-  @Dependency(\.supabase) var api
+  @Dependency(\.supabase) var supabase
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
@@ -31,7 +31,7 @@ struct AppReducer {
           return .run { send in
             await withTaskGroup(of: Void.self) { taskGroup in
               taskGroup.addTask {
-                for await value in await api.currentUser() {
+                for await value in await supabase.currentUser() {
                   await send(.fetchCurrentUserResponse(value))
                 }
               }

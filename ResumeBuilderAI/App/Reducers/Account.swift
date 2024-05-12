@@ -20,7 +20,7 @@ struct Account {
     }
   }
   
-  @Dependency(\.supabase) var api
+  @Dependency(\.supabase) var supabase
   @Dependency(\.dismiss) var dismiss
   
   var body: some ReducerOf<Self> {
@@ -46,7 +46,7 @@ struct Account {
           
         case .confirm:
           return .run { send in
-            try await self.api.signOut()
+            try await self.supabase.signOut()
           }
         }
         

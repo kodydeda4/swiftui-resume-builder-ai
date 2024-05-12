@@ -17,7 +17,7 @@ struct Authentication {
     }
   }
   
-  @Dependency(\.supabase) var api
+  @Dependency(\.supabase) var supabase
 
   var body: some ReducerOf<Self> {
     Reduce { state, action in
@@ -26,7 +26,7 @@ struct Authentication {
       case let .view(.continueWithAppleButtonTapped(token)):
         return .run { send in
           await send(.authenticationResponse(Result {
-            _ = try await api.signIn(token)
+            _ = try await supabase.signIn(token)
           }))
         }
         
