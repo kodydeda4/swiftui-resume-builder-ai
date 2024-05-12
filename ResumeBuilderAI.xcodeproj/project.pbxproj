@@ -29,7 +29,6 @@
 		3365D41E2BEE992D00AF1542 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3365D41D2BEE992D00AF1542 /* OpenAI */; };
 		3365D4202BEE997A00AF1542 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D41F2BEE997A00AF1542 /* Secrets.swift */; };
 		3365D4222BEE9C5D00AF1542 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4212BEE9C5D00AF1542 /* Account.swift */; };
-		3365D4282BEEBB1D00AF1542 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4272BEEBB1D00AF1542 /* ChatStore.swift */; };
 		3365D42F2BEEC24700AF1542 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D42E2BEEC24700AF1542 /* Shared.swift */; };
 		3365D4362BEECBA300AF1542 /* ConversationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365D4352BEECBA300AF1542 /* ConversationReducer.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		3365D41A2BEE991500AF1542 /* OpenAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClient.swift; sourceTree = "<group>"; };
 		3365D41F2BEE997A00AF1542 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		3365D4212BEE9C5D00AF1542 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		3365D4272BEEBB1D00AF1542 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
 		3365D42E2BEEC24700AF1542 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		3365D4352BEECBA300AF1542 /* ConversationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +116,6 @@
 				3365D3672BEE62E800AF1542 /* Preview Content */,
 				3365D39A2BEE666400AF1542 /* Resources */,
 				3365D39F2BEE870B00AF1542 /* SwiftUI */,
-				3365D4272BEEBB1D00AF1542 /* ChatStore.swift */,
 			);
 			path = ResumeBuilderAI;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				3365D3A12BEE871600AF1542 /* RoundedRectangleButtonStyle.swift in Sources */,
 				3365D3912BEE655600AF1542 /* MainReducer.swift in Sources */,
 				3365D42F2BEEC24700AF1542 /* Shared.swift in Sources */,
-				3365D4282BEEBB1D00AF1542 /* ChatStore.swift in Sources */,
 				3365D3A32BEE899900AF1542 /* SignInWithApple+Extensions.swift in Sources */,
 				3365D41B2BEE991500AF1542 /* OpenAIClient.swift in Sources */,
 				3365D4362BEECBA300AF1542 /* ConversationReducer.swift in Sources */,
